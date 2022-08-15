@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HASTANEPROJEModelStoreContainer" CdmEntityContainer="HASTANEPROJEEntities">
+    <EntitySetMapping Name="DOKTORLAR">
+      <EntityTypeMapping TypeName="HASTANEPROJEModel.DOKTORLAR">
+        <MappingFragment StoreEntitySet="DOKTORLAR">
+          <ScalarProperty Name="DOKTORNO" ColumnName="DOKTORNO" />
+          <ScalarProperty Name="AD_SOYAD" ColumnName="AD_SOYAD" />
+          <ScalarProperty Name="POLIKLINIK" ColumnName="POLIKLINIK" />
+          <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+          <ScalarProperty Name="E_MAIL" ColumnName="E_MAIL" />
+          <ScalarProperty Name="IZINLIMI" ColumnName="IZINLIMI" />
+          <ScalarProperty Name="DR_ID" ColumnName="DR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIRIS">
+      <EntityTypeMapping TypeName="HASTANEPROJEModel.GIRIS">
+        <MappingFragment StoreEntitySet="GIRIS">
+          <ScalarProperty Name="ADSOYAD" ColumnName="ADSOYAD" />
+          <ScalarProperty Name="NUM" ColumnName="NUM" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TCNO" ColumnName="TCNO" />
+          <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HASTA">
+      <EntityTypeMapping TypeName="HASTANEPROJEModel.HASTA">
+        <MappingFragment StoreEntitySet="HASTA">
+          <ScalarProperty Name="HASTANO" ColumnName="HASTANO" />
+          <ScalarProperty Name="TCNO" ColumnName="TCNO" />
+          <ScalarProperty Name="ADI_SOYADI" ColumnName="ADI_SOYADI" />
+          <ScalarProperty Name="POLIKLINIK" ColumnName="POLIKLINIK" />
+          <ScalarProperty Name="DOKTORADI" ColumnName="DOKTORADI" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="SSKMI" ColumnName="SSKMI" />
+          <ScalarProperty Name="RANDEVUMU" ColumnName="RANDEVUMU" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="SAAT" ColumnName="SAAT" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+          <ScalarProperty Name="BAKILDIMI" ColumnName="BAKILDIMI" />
+          <ScalarProperty Name="KONTROLGUNU" ColumnName="KONTROLGUNU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IZIN">
+      <EntityTypeMapping TypeName="HASTANEPROJEModel.IZIN">
+        <MappingFragment StoreEntitySet="IZIN">
+          <ScalarProperty Name="IZIN_ID" ColumnName="IZIN_ID" />
+          <ScalarProperty Name="BASLANGICTARIH" ColumnName="BASLANGICTARIH" />
+          <ScalarProperty Name="BITISTARIH" ColumnName="BITISTARIH" />
+          <ScalarProperty Name="BAS_ACIKLAMA" ColumnName="BAS_ACIKLAMA" />
+          <ScalarProperty Name="ONAYLANDIMI" ColumnName="ONAYLANDIMI" />
+          <ScalarProperty Name="AD_SOYAD" ColumnName="AD_SOYAD" />
+          <ScalarProperty Name="POLIKLINIK" ColumnName="POLIKLINIK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GUNLUKIZIN">
+      <EntityTypeMapping TypeName="HASTANEPROJEModel.GUNLUKIZIN">
+        <MappingFragment StoreEntitySet="GUNLUKIZIN">
+          <ScalarProperty Name="AKTAR_AD_SOYAD" ColumnName="AKTAR_AD_SOYAD" />
+          <ScalarProperty Name="POLIKLINIK" ColumnName="POLIKLINIK" />
+          <ScalarProperty Name="AD_SOYAD" ColumnName="AD_SOYAD" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="IZIN_ID" ColumnName="IZIN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

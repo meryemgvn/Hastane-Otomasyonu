@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HASTANEPROJEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DOKTORLAR">
+    <Key>
+      <PropertyRef Name="DOKTORNO" />
+    </Key>
+    <Property Name="DOKTORNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD_SOYAD" Type="varchar" MaxLength="30" />
+    <Property Name="POLIKLINIK" Type="varchar(max)" />
+    <Property Name="FOTO" Type="varbinary(max)" />
+    <Property Name="E_MAIL" Type="varchar" MaxLength="50" />
+    <Property Name="IZINLIMI" Type="bit" />
+    <Property Name="DR_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="GIRIS">
+    <Key>
+      <PropertyRef Name="NUM" />
+    </Key>
+    <Property Name="NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" />
+    <Property Name="TCNO" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="SIFRE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ADSOYAD" Type="nvarchar" MaxLength="55" />
+  </EntityType>
+  <EntityType Name="GUNLUKIZIN">
+    <Key>
+      <PropertyRef Name="IZIN_ID" />
+    </Key>
+    <Property Name="IZIN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TARIH" Type="date" />
+    <Property Name="ACIKLAMA" Type="varchar(max)" />
+    <Property Name="AD_SOYAD" Type="varchar" MaxLength="60" />
+    <Property Name="POLIKLINIK" Type="varchar" MaxLength="50" />
+    <Property Name="AKTAR_AD_SOYAD" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="HASTA">
+    <Key>
+      <PropertyRef Name="HASTANO" />
+    </Key>
+    <Property Name="HASTANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TCNO" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="ADI_SOYADI" Type="varchar(max)" />
+    <Property Name="POLIKLINIK" Type="varchar" MaxLength="50" />
+    <Property Name="DOKTORADI" Type="varchar" MaxLength="50" />
+    <Property Name="ADRES" Type="varchar(max)" />
+    <Property Name="TEL" Type="varchar" MaxLength="11" />
+    <Property Name="SSKMI" Type="bit" />
+    <Property Name="RANDEVUMU" Type="bit" />
+    <Property Name="TARIH" Type="date" />
+    <Property Name="SAAT" Type="time" Precision="7" />
+    <Property Name="ACIKLAMA" Type="varchar(max)" />
+    <Property Name="BAKILDIMI" Type="bit" />
+    <Property Name="KONTROLGUNU" Type="int" />
+  </EntityType>
+  <EntityType Name="IZIN">
+    <Key>
+      <PropertyRef Name="IZIN_ID" />
+    </Key>
+    <Property Name="IZIN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BASLANGICTARIH" Type="date" />
+    <Property Name="BITISTARIH" Type="date" />
+    <Property Name="BAS_ACIKLAMA" Type="varchar(max)" />
+    <Property Name="ONAYLANDIMI" Type="bit" />
+    <Property Name="AD_SOYAD" Type="varchar" MaxLength="50" />
+    <Property Name="POLIKLINIK" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="HASTANEPROJEModelStoreContainer">
+    <EntitySet Name="DOKTORLAR" EntityType="Self.DOKTORLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GIRIS" EntityType="Self.GIRIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GUNLUKIZIN" EntityType="Self.GUNLUKIZIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HASTA" EntityType="Self.HASTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IZIN" EntityType="Self.IZIN" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

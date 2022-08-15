@@ -1,0 +1,1 @@
+Alter table GIRIS ADD ADSOYAD nvarchar(55)

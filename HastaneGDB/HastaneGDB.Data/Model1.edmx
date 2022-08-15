@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HASTANEPROJEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DOKTORLAR">
+          <Key>
+            <PropertyRef Name="DOKTORNO" />
+          </Key>
+          <Property Name="DOKTORNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AD_SOYAD" Type="varchar" MaxLength="30" />
+          <Property Name="POLIKLINIK" Type="varchar(max)" />
+          <Property Name="FOTO" Type="varbinary(max)" />
+          <Property Name="E_MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="IZINLIMI" Type="bit" />
+          <Property Name="DR_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="GIRIS">
+          <Key>
+            <PropertyRef Name="NUM" />
+          </Key>
+          <Property Name="NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" />
+          <Property Name="TCNO" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="SIFRE" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ADSOYAD" Type="nvarchar" MaxLength="55" />
+        </EntityType>
+        <EntityType Name="GUNLUKIZIN">
+          <Key>
+            <PropertyRef Name="IZIN_ID" />
+          </Key>
+          <Property Name="IZIN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TARIH" Type="date" />
+          <Property Name="ACIKLAMA" Type="varchar(max)" />
+          <Property Name="AD_SOYAD" Type="varchar" MaxLength="60" />
+          <Property Name="POLIKLINIK" Type="varchar" MaxLength="50" />
+          <Property Name="AKTAR_AD_SOYAD" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="HASTA">
+          <Key>
+            <PropertyRef Name="HASTANO" />
+          </Key>
+          <Property Name="HASTANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TCNO" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="ADI_SOYADI" Type="varchar(max)" />
+          <Property Name="POLIKLINIK" Type="varchar" MaxLength="50" />
+          <Property Name="DOKTORADI" Type="varchar" MaxLength="50" />
+          <Property Name="ADRES" Type="varchar(max)" />
+          <Property Name="TEL" Type="varchar" MaxLength="11" />
+          <Property Name="SSKMI" Type="bit" />
+          <Property Name="RANDEVUMU" Type="bit" />
+          <Property Name="TARIH" Type="date" />
+          <Property Name="SAAT" Type="time" Precision="7" />
+          <Property Name="ACIKLAMA" Type="varchar(max)" />
+          <Property Name="BAKILDIMI" Type="bit" />
+          <Property Name="KONTROLGUNU" Type="int" />
+        </EntityType>
+        <EntityType Name="IZIN">
+          <Key>
+            <PropertyRef Name="IZIN_ID" />
+          </Key>
+          <Property Name="IZIN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BASLANGICTARIH" Type="date" />
+          <Property Name="BITISTARIH" Type="date" />
+          <Property Name="BAS_ACIKLAMA" Type="varchar(max)" />
+          <Property Name="ONAYLANDIMI" Type="bit" />
+          <Property Name="AD_SOYAD" Type="varchar" MaxLength="50" />
+          <Property Name="POLIKLINIK" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="HASTANEPROJEModelStoreContainer">
+          <EntitySet Name="DOKTORLAR" EntityType="Self.DOKTORLAR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIRIS" EntityType="Self.GIRIS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GUNLUKIZIN" EntityType="Self.GUNLUKIZIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HASTA" EntityType="Self.HASTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IZIN" EntityType="Self.IZIN" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HASTANEPROJEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DOKTORLAR">
+          <Key>
+            <PropertyRef Name="DOKTORNO" />
+          </Key>
+          <Property Name="DOKTORNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AD_SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="POLIKLINIK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="E_MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IZINLIMI" Type="Boolean" />
+          <Property Name="DR_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="GIRIS">
+          <Key>
+            <PropertyRef Name="NUM" />
+          </Key>
+          <Property Name="NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int32" />
+          <Property Name="TCNO" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SIFRE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADSOYAD" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HASTA">
+          <Key>
+            <PropertyRef Name="HASTANO" />
+          </Key>
+          <Property Name="HASTANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TCNO" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADI_SOYADI" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="POLIKLINIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOKTORADI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADRES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TEL" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="SSKMI" Type="Boolean" />
+          <Property Name="RANDEVUMU" Type="Boolean" />
+          <Property Name="TARIH" Type="DateTime" Precision="0" />
+          <Property Name="SAAT" Type="Time" Precision="7" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BAKILDIMI" Type="Boolean" />
+          <Property Name="KONTROLGUNU" Type="Int32" />
+        </EntityType>
+        <EntityType Name="IZIN">
+          <Key>
+            <PropertyRef Name="IZIN_ID" />
+          </Key>
+          <Property Name="IZIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BASLANGICTARIH" Type="DateTime" Precision="0" />
+          <Property Name="BITISTARIH" Type="DateTime" Precision="0" />
+          <Property Name="BAS_ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ONAYLANDIMI" Type="Boolean" />
+          <Property Name="AD_SOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POLIKLINIK" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="HASTANEPROJEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DOKTORLAR" EntityType="Self.DOKTORLAR" />
+          <EntitySet Name="GIRIS" EntityType="Self.GIRIS" />
+          <EntitySet Name="HASTA" EntityType="Self.HASTA" />
+          <EntitySet Name="IZIN" EntityType="Self.IZIN" />
+          <EntitySet Name="GUNLUKIZIN" EntityType="HASTANEPROJEModel.GUNLUKIZIN" />
+        </EntityContainer>
+        <EntityType Name="GUNLUKIZIN">
+          <Key>
+            <PropertyRef Name="IZIN_ID" />
+          </Key>
+          <Property Name="IZIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TARIH" Type="DateTime" Precision="0" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AD_SOYAD" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="POLIKLINIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AKTAR_AD_SOYAD" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HASTANEPROJEModelStoreContainer" CdmEntityContainer="HASTANEPROJEEntities">
+          <EntitySetMapping Name="DOKTORLAR">
+            <EntityTypeMapping TypeName="HASTANEPROJEModel.DOKTORLAR">
+              <MappingFragment StoreEntitySet="DOKTORLAR">
+                <ScalarProperty Name="DOKTORNO" ColumnName="DOKTORNO" />
+                <ScalarProperty Name="AD_SOYAD" ColumnName="AD_SOYAD" />
+                <ScalarProperty Name="POLIKLINIK" ColumnName="POLIKLINIK" />
+                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+                <ScalarProperty Name="E_MAIL" ColumnName="E_MAIL" />
+                <ScalarProperty Name="IZINLIMI" ColumnName="IZINLIMI" />
+                <ScalarProperty Name="DR_ID" ColumnName="DR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIRIS">
+            <EntityTypeMapping TypeName="HASTANEPROJEModel.GIRIS">
+              <MappingFragment StoreEntitySet="GIRIS">
+                <ScalarProperty Name="ADSOYAD" ColumnName="ADSOYAD" />
+                <ScalarProperty Name="NUM" ColumnName="NUM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TCNO" ColumnName="TCNO" />
+                <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HASTA">
+            <EntityTypeMapping TypeName="HASTANEPROJEModel.HASTA">
+              <MappingFragment StoreEntitySet="HASTA">
+                <ScalarProperty Name="HASTANO" ColumnName="HASTANO" />
+                <ScalarProperty Name="TCNO" ColumnName="TCNO" />
+                <ScalarProperty Name="ADI_SOYADI" ColumnName="ADI_SOYADI" />
+                <ScalarProperty Name="POLIKLINIK" ColumnName="POLIKLINIK" />
+                <ScalarProperty Name="DOKTORADI" ColumnName="DOKTORADI" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="SSKMI" ColumnName="SSKMI" />
+                <ScalarProperty Name="RANDEVUMU" ColumnName="RANDEVUMU" />
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+                <ScalarProperty Name="SAAT" ColumnName="SAAT" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+                <ScalarProperty Name="BAKILDIMI" ColumnName="BAKILDIMI" />
+                <ScalarProperty Name="KONTROLGUNU" ColumnName="KONTROLGUNU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IZIN">
+            <EntityTypeMapping TypeName="HASTANEPROJEModel.IZIN">
+              <MappingFragment StoreEntitySet="IZIN">
+                <ScalarProperty Name="IZIN_ID" ColumnName="IZIN_ID" />
+                <ScalarProperty Name="BASLANGICTARIH" ColumnName="BASLANGICTARIH" />
+                <ScalarProperty Name="BITISTARIH" ColumnName="BITISTARIH" />
+                <ScalarProperty Name="BAS_ACIKLAMA" ColumnName="BAS_ACIKLAMA" />
+                <ScalarProperty Name="ONAYLANDIMI" ColumnName="ONAYLANDIMI" />
+                <ScalarProperty Name="AD_SOYAD" ColumnName="AD_SOYAD" />
+                <ScalarProperty Name="POLIKLINIK" ColumnName="POLIKLINIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GUNLUKIZIN">
+            <EntityTypeMapping TypeName="HASTANEPROJEModel.GUNLUKIZIN">
+              <MappingFragment StoreEntitySet="GUNLUKIZIN">
+                <ScalarProperty Name="AKTAR_AD_SOYAD" ColumnName="AKTAR_AD_SOYAD" />
+                <ScalarProperty Name="POLIKLINIK" ColumnName="POLIKLINIK" />
+                <ScalarProperty Name="AD_SOYAD" ColumnName="AD_SOYAD" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+                <ScalarProperty Name="IZIN_ID" ColumnName="IZIN_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

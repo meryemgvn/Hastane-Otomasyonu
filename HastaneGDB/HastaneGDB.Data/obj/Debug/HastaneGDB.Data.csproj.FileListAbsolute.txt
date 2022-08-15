@@ -1,0 +1,10 @@
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\bin\Debug\HastaneGDB.Data.dll.config
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\bin\Debug\HastaneGDB.Data.dll
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\bin\Debug\HastaneGDB.Data.pdb
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\bin\Debug\EntityFramework.dll
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\bin\Debug\EntityFramework.xml
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\obj\Debug\HastaneGDB.Data.csprojResolveAssemblyReference.cache
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\obj\Debug\HastaneGDB.Data.dll
+C:\Users\Meryem\Desktop\HastaneGDB\HastaneGDB.Data\obj\Debug\HastaneGDB.Data.pdb

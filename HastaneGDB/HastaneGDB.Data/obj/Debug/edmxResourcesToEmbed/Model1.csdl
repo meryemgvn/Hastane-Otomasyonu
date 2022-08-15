@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HASTANEPROJEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DOKTORLAR">
+    <Key>
+      <PropertyRef Name="DOKTORNO" />
+    </Key>
+    <Property Name="DOKTORNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD_SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="POLIKLINIK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="E_MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IZINLIMI" Type="Boolean" />
+    <Property Name="DR_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GIRIS">
+    <Key>
+      <PropertyRef Name="NUM" />
+    </Key>
+    <Property Name="NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" />
+    <Property Name="TCNO" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SIFRE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADSOYAD" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HASTA">
+    <Key>
+      <PropertyRef Name="HASTANO" />
+    </Key>
+    <Property Name="HASTANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TCNO" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADI_SOYADI" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="POLIKLINIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DOKTORADI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADRES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TEL" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="SSKMI" Type="Boolean" />
+    <Property Name="RANDEVUMU" Type="Boolean" />
+    <Property Name="TARIH" Type="DateTime" Precision="0" />
+    <Property Name="SAAT" Type="Time" Precision="7" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BAKILDIMI" Type="Boolean" />
+    <Property Name="KONTROLGUNU" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IZIN">
+    <Key>
+      <PropertyRef Name="IZIN_ID" />
+    </Key>
+    <Property Name="IZIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BASLANGICTARIH" Type="DateTime" Precision="0" />
+    <Property Name="BITISTARIH" Type="DateTime" Precision="0" />
+    <Property Name="BAS_ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ONAYLANDIMI" Type="Boolean" />
+    <Property Name="AD_SOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="POLIKLINIK" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="HASTANEPROJEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DOKTORLAR" EntityType="Self.DOKTORLAR" />
+    <EntitySet Name="GIRIS" EntityType="Self.GIRIS" />
+    <EntitySet Name="HASTA" EntityType="Self.HASTA" />
+    <EntitySet Name="IZIN" EntityType="Self.IZIN" />
+    <EntitySet Name="GUNLUKIZIN" EntityType="HASTANEPROJEModel.GUNLUKIZIN" />
+  </EntityContainer>
+  <EntityType Name="GUNLUKIZIN">
+    <Key>
+      <PropertyRef Name="IZIN_ID" />
+    </Key>
+    <Property Name="IZIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TARIH" Type="DateTime" Precision="0" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AD_SOYAD" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="POLIKLINIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AKTAR_AD_SOYAD" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
